@@ -1,1 +1,1 @@
-export function parse(text: string): any;
+export function parse(text: string, reviver?: (this: any, key: string, value: any) => any): any;
