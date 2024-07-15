@@ -2,6 +2,13 @@ const fs = require('fs');
 const { run } = require('./util');
 
 {
+    console.log('xs data test ----------------')
+    let data1 = fs.readFileSync('./benchmark/data-xs.json', 'utf8');
+    run(data1);
+    console.log()
+}
+
+{
     console.log('small data test ----------------')
     let data1 = fs.readFileSync('./benchmark/data-small.json', 'utf8');
     run(data1);
