@@ -5,6 +5,7 @@
 #include <ctime>
 #include <sys/timeb.h>
 #include <string>
+#include <sstream>
 
 namespace yy_parser
 {
@@ -23,13 +24,18 @@ namespace yy_parser
     std::string content = std::string(*String::Utf8Value(isolate, args[0]));
 
     const char *str_buf = content.c_str();
-    yyjson_doc *doc = yyjson_read(str_buf, strlen(str_buf), 0);
-    // yyjson_val *obj = yyjson_doc_get_root(doc);
+    yyjson_read_err err;
+    yyjson_read_flag flag = 0;
+    flag &= ~YYJSON_READ_INSITU;
+    yyjson_doc *doc = yyjson_read_opts((char *)(void *)(size_t)(const void *)str_buf, strlen(str_buf), flag, NULL, &err);
 
     if (!doc)
     {
+      const char *prefix = "Unexpected token in JSON at position ";
+      std::stringstream msg;
+      msg << prefix << err.pos;
       isolate->ThrowException(v8::Exception::Error(
-          v8::String::NewFromUtf8(isolate, "Unexpected end of JSON input").ToLocalChecked()));
+          v8::String::NewFromUtf8(isolate, msg.str().c_str()).ToLocalChecked()));
       yyjson_doc_free(doc);
       return;
     }
