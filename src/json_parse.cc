@@ -30,6 +30,7 @@ namespace yy_parser
     {
       isolate->ThrowException(v8::Exception::Error(
           v8::String::NewFromUtf8(isolate, "Unexpected end of JSON input").ToLocalChecked()));
+      yyjson_doc_free(doc);
       return;
     }
 
@@ -39,6 +40,7 @@ namespace yy_parser
       String::NewFromUtf8(isolate, json).ToLocalChecked()
     );
 
+    yyjson_doc_free(doc);
     free((void *)json);
     return;
 
