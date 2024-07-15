@@ -1,6 +1,6 @@
 {
   "name": "fast-json-bigint",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "lib/index.js",
   "dependencies": {

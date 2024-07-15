@@ -38,6 +38,8 @@ namespace yy_parser
     args.GetReturnValue().Set(
       String::NewFromUtf8(isolate, json).ToLocalChecked()
     );
+
+    free((void *)json);
     return;
 
     if (!json)
