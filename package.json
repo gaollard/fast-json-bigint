@@ -9,6 +9,10 @@
   "scripts": {
     "test": "jest example/*.ts"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaollard/fast-json-bigint.git"
+  },
   "devDependencies": {
     "@babel/preset-env": "^7.19.1",
     "@babel/preset-typescript": "^7.18.6",
