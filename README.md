@@ -13,20 +13,25 @@ nodejs JSON.parse 解析 number 范围为 `[-9007199254740991, 9007199254740991]
 对某个 json string 解析10次耗时统计:
 
 ```text
-small data test ----------------
-        JSON.parse:  7ms
-  fast-bigint-json:  11ms
-       json-bigint:  57ms
+73 byte xs data test ----------------
+                  JSON.parse:  0ms
+            fast-bigint-json:  0ms
+                 json-bigint:  1ms
 
-mid data test ----------------
-        JSON.parse:  47ms
-  fast-bigint-json:  90ms
-       json-bigint:  277ms
+178258 byte small data test ----------------
+                  JSON.parse:  7ms
+            fast-bigint-json:  7ms
+                 json-bigint:  44ms
 
-big data test ----------------
-        JSON.parse:  200ms
-  fast-bigint-json:  521ms
-       json-bigint:  1580ms
+963001 byte mid data test ----------------
+                  JSON.parse:  42ms
+            fast-bigint-json:  64ms
+                 json-bigint:  218ms
+
+4793603 byte big data test ----------------
+                  JSON.parse:  221ms
+            fast-bigint-json:  480ms
+                 json-bigint:  1571ms
 ```
 
 可以看出，不管是解析简单或复杂的数据，效率提升都是巨大的

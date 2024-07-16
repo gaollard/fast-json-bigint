@@ -6,20 +6,21 @@ function loop(message, cb) {
   for (let i = 0; i < 10; i++) {
     cb()
   }
-  console.log(message.padStart(20), Date.now() - s + 'ms')
+  console.log(message.padStart(30), Date.now() - s + 'ms')
 }
 
 module.exports = {
   run (data) {
-    loop("JSON.parse: ", () => {
+    const msg = '';
+    loop(msg + "JSON.parse: ", () => {
       JSON.parse(data);
     })
     
-    loop("fast-bigint-json: ",() => {
+    loop(msg + "fast-bigint-json: ",() => {
       parse( data);
     })
     
-    loop(`json-bigint: `, () => {
+    loop(msg + `json-bigint: `, () => {
       bigJson.parse(data);
     })
   }
