@@ -8,6 +8,12 @@ nodejs JSON.parse 解析 number 范围为 `[-9007199254740991, 9007199254740991]
 
 特别声明：该项目利用 yyjson https://github.com/ibireme/yyjson/blob/master/LICENSE 做JSON 解析
 
+## 使用
+
+```shell
+yarn add fast-json-bigint
+```
+
 ## benchmark
 
 对某个 json string 解析10次耗时统计:
