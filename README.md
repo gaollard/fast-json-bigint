@@ -14,6 +14,12 @@ nodejs JSON.parse 解析 number 范围为 `[-9007199254740991, 9007199254740991]
 yarn add fast-json-bigint
 ```
 
+```ts
+import { parse } from 'fast-json-bigint';
+
+JSON.parse = parse;
+```
+
 ## benchmark
 
 对某个 json string 解析10次耗时统计:
