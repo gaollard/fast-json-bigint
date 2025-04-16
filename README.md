@@ -6,7 +6,7 @@ nodejs JSON.parse 解析 number 范围为 `[-9007199254740991, 9007199254740991]
 
 我基于这个库，修改了部分代码，利用 Node-API 提供给 nodejs 使用，相较于 json-bigint 可以大幅提升性能。
 
-特别声明：该项目利用 yyjson https://github.com/ibireme/yyjson/blob/master/LICENSE 做JSON 解析
+特别声明：该项目利用 yyjson https://github.com/ibireme/yyjson/blob/master/LICENSE 做JSON 解析。
 
 ## 使用
 
@@ -20,7 +20,7 @@ import { parse } from 'fast-json-bigint';
 JSON.parse = parse;
 ```
 
-## benchmark
+## performance
 
 对某个 json string 解析10次耗时统计:
 
