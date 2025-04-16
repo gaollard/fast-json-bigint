@@ -6,7 +6,7 @@ nodejs JSON.parse 解析 number 范围为 `[-9007199254740991, 9007199254740991]
 
 [yyjson](https://github.com/ibireme/yyjson) 是一个高性能的 JSON 解析库，性能测试见[https://github.com/ibireme/yyjson]
 
-我基于这个库，修改了部分代码，利用 Node-API 提供给 nodejs 使用，相较于 json-bigint 可以大幅提升性能。
+我基于这个库，修改了部分代码，使用 N-API 构建动态库提供给 nodejs 使用，相较于 json-bigint 可以大幅提升性能。
 
 特别声明：该项目利用 yyjson https://github.com/ibireme/yyjson/blob/master/LICENSE 做JSON 解析。
 
