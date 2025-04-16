@@ -1,6 +1,6 @@
 ## 介绍
 
-high performance json-bigint with native module
+high performance json-bigint with native module and support worker_threads
 
 nodejs JSON.parse 解析 number 范围为 `[-9007199254740991, 9007199254740991]`，无法处理 int64, 被广泛使用的方案是 [json-bigint](https://www.npmjs.com/package/json-bigint), 但这个库的性能实在太慢了，处理大 JSON 会严重阻塞 node 主线程。
 
