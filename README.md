@@ -1,5 +1,7 @@
 ## 介绍
 
+high performance json-bigint with native module
+
 nodejs JSON.parse 解析 number 范围为 `[-9007199254740991, 9007199254740991]`，无法处理 int64, 被广泛使用的方案是 [json-bigint](https://www.npmjs.com/package/json-bigint), 但这个库的性能实在太慢了，处理大 JSON 会严重阻塞 node 主线程。
 
 [yyjson](https://github.com/ibireme/yyjson) 是一个高性能的 JSON 解析库，性能测试见[https://github.com/ibireme/yyjson]
