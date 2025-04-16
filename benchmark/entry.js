@@ -29,3 +29,13 @@ const { run } = require('./util');
     run(data1);
     console.log()
 }
+
+{
+    let data1 = fs.readFileSync('./benchmark/data-big.json', 'utf8');
+    let data2 = JSON.stringify({
+        data: data1
+    })
+    console.log(Buffer.from(data2).length + ' byte '  + 'big data test ----------------')
+    run(data2);
+    console.log()
+}

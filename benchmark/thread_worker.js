@@ -1,8 +1,13 @@
 const workerpool = require('workerpool');
 const pool = workerpool.pool(__dirname + '/worker.js');
+const { parse } = require('../lib');
+
+const data = `{"name": 2003482851550431266}`
+
+parse(data)
 
 pool
-  .exec('parse', [`{"name":2}`])
+  .exec('parse', [data])
   .then(function (result) {
     console.log('result', result); // outputs 7
   })
