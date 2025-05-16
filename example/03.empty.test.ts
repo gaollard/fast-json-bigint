@@ -8,4 +8,7 @@ describe('empty', () => {
   test('empty {}', () => {
     expect(parse('{}')).toStrictEqual({});
   });
+    test('empty []', () => {
+    expect(parse('[]')).toStrictEqual([]);
+  });
 });
