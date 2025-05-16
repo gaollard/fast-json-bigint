@@ -20,6 +20,8 @@ Napi::Value Method(const Napi::CallbackInfo& info) {
     return env.Null();
   }
 
+  std::cout << "type " << info[0];
+
   if (!info[0].IsString()) {
     Napi::TypeError::New(env, "Argument must be a string").ThrowAsJavaScriptException();
     return env.Null();
