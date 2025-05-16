@@ -1,11 +1,11 @@
 {
   "name": "fast-json-bigint",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "license": "MIT",
   "main": "lib/index.js",
   "dependencies": {
     "json-bigint": "^1.0.0",
-    "node-addon-api": "^8.3.1",
+    "node-addon-api": "7",
     "workerpool": "^9.2.0"
   },
   "scripts": {
