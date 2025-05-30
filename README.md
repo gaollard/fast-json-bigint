@@ -19,7 +19,7 @@ yarn add fast-json-bigint
 ```ts
 import { parse } from 'fast-json-bigint';
 
-JSON.parse = parse;
+parse(`{"value":2}`);
 ```
 
 ## performance
